@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int minCon(int n) {
+
+    for (int con = 1; con < n; con++) { //con = 생성자
+
+        int sum = con, tmp = con;       //sum = 분해합
+
+         while (tmp > 0) {
+            sum += tmp % 10;
+            tmp /= 10;
+        }
+
+        if (sum == n) return con;
+    }
+
+    return 0;
+}
+int main() {
+    //자연수 N(1 <= N <= 1000000), 생성자 M
+    int n; //n(자연수)
+    cin >> n;
+    cout << minCon(n);
+}
