@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int solution(int n, int m, vector<int> vector) {
+	int sum, max = -1;
+
+	for (int first = 0; first < n - 2; first++) {
+		
+		for (int second = first + 1; second < n - 1; second++) {
+
+			for (int third = second + 1; third < n; third++){
+				sum = vector[first] + vector[second] + vector[third];
+				if (sum <= m && sum > max) max = sum;
+			}
+		}
+	}
+
+	return max;
+}
+
+int main() {
+	int n, m, cards;
+	cin >> n >> m;
+
+	vector<int> vector;
+
+	for (int i = 0; i < n; i++) {
+		cin >> cards;
+		vector.push_back(cards);
+	}
+
+	cout << solution(n, m, vector);
+}
