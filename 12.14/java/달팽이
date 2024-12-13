@@ -1,0 +1,21 @@
+import java.util.*;
+
+public class Main {
+
+    public static int day(int up, int down, int stick){
+        if((stick - up) % (up - down) != 0) return 2 + (stick - up) / (up - down);
+        else return 1 + (stick - up) / (up - down);
+    }
+    public static void main(String[] args) throws Exception {
+
+        Scanner sc = new Scanner(System.in);
+        
+        int up, down, stick;
+        up = sc.nextInt();
+        down = sc.nextInt();
+        stick = sc.nextInt();
+        
+        System.out.println(day(up, down, stick));
+    }
+
+}
