@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+char findMaxAl(string word) {
+    int alphabet[26] = { 0, };
+    int max = 0;
+    char max_al;
+
+    for (int i = 0; i < word.length(); i++) {
+        if (word[i] > 'Z') word[i] -= 32;
+        alphabet[word[i] - 65] += 1;
+    }
+
+    for (int i = 0; i < 26; i++) {
+        if (alphabet[i] == max) max_al = '?';
+        else if (alphabet[i] > max) { max = alphabet[i]; max_al = i + 65; }
+    }
+
+    return max_al;
+}
+int main() {
+    
+    string word;
+    cin >> word;
+    
+
+    cout << findMaxAl(word);
+
+}
