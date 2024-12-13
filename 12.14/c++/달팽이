@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int day(int up, int down, int stick) {
+    if ((stick - up) % (up - down) != 0) return 2 + (stick - up) / (up - down);
+    else return 1 + (stick - up) / (up - down);
+}
+
+int main() {
+    // 1 <= B(내려감) < A(올라감) <= V(나무막대) <= 1,000,000,000
+    int up, down, stick;
+    cin >> up >> down >> stick;
+
+    cout << day(up, down, stick);
+}
