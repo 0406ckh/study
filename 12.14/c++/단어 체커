@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int count(int n) {
+    int count = 0;
+    bool flag;
+    for(int i=0;i<n;i++){
+        string word;
+        cin >> word;
+        bool eng[26] = { false, };
+        eng[word[0] - 'a'] = true;
+        flag = true;
+
+        for (int i = 1; i < word.length(); i++) {
+            if (word[i] == word[i - 1]) continue;
+            if (eng[word[i] - 'a']) flag = false;
+            eng[word[i] - 'a'] = true;
+        }
+        if (flag)count++;
+    }
+    return count;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    cout << count(n);
+}
