@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Main {
+
+    public static void needChessCount(Scanner sc){
+        int[] chess_cnt = {1,1,2,2,2,8};
+        int chess_num;
+
+        for(int i = 0; i < 6; i++){
+            chess_num = sc.nextInt();
+            chess_cnt[i] -= chess_num;
+        }
+
+        for(int i = 0; i < 6; i++){
+            System.out.print(chess_cnt[i]+ " ");
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        Scanner sc = new Scanner(System.in);
+
+        needChessCount(sc);
+
+    }
+
+}
