@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+void needChessCount() {
+    int chess_cnt[6] = { 1,1,2,2,2,8 };
+    int chess_num;
+
+    for (int i = 0; i < 6; i++) {
+        cin >> chess_num;
+        chess_cnt[i] -= chess_num;
+    }
+
+    for (int i = 0; i < 6; i++) {
+        cout << chess_cnt[i] << " ";
+    }
+}
+int main() {
+    needChessCount();
+}
